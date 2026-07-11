@@ -59,38 +59,48 @@
     </nav>
 
     <!-- Hero section -->
-    <!-- A hero section is the large, prominent area at the top of a website’s homepage. 
-    It usually includes a headline, a short description, and a call-to-action button. 
-    The hero section is designed to grab visitors’ attention and quickly communicate the main message or value of the site.
-    It often features a background image, video, or graphic.-->
-    <div class="main">
-        <div class="main__container"></div>
-            <!--<div class="main__content">
-                <h1>NEXT GENERATION</h1>
-                <h2>TECHNOLOGY</h2>
-                <p>See what makes us different.</p>
-                <button class="main__btn">
-                    <a href="">Get Started</a>
-                </button>
+    <section class="main">
+        <div class="main__content">
+            <p class="main__eyebrow">DORAAN SKINCARE</p>
+            <h1>DORAAN</h1>
+            <h2>Szépség és pihentető wellness</h2>
+            <p class="main__description">
+                Bőr- és arcápolási élmény, amely a természetes ragyogást és az egyensúlyt helyezi előtérbe.
+            </p>
+            <div class="main__actions">
+                <a href="services.html" class="main__btn">Szolgáltatásaim</a>
+                <a href="contact.html" class="main__btn main__btn--ghost">Kapcsolat</a>
             </div>
-            <div class="main__img--container">
-                <img src="images/pic1.svg" alt="pic" id="main__img"><!-- alt means alternative name of the picture. It will show if the image cannot be displayed -->
-                <!-- pictures from https://undraw.co/--> <!-- you can add your collor at the side so the pictures will be alligned to it. Our color code is #FA6771-->
-            <!--</div>-->
         </div>
-    </div>
+    </section>
+
+    <section class="home-intro">
+        <div class="home-intro__image">
+            <img src="images/18_.jpg" alt="Beauty therapy session">
+        </div>
+        <div class="home-intro__copy">
+            <p class="section-tag">Ápolás, nyugalom, ragyogás</p>
+            <h2>Érintés, amely újra feltölti a bőrödet és a lelkedet.</h2>
+            <p>
+                A DORAAN célja, hogy a mindennapi stressz és a bőrápolás közötti egyensúlyt egy személyre szabott, tudatos és természetes élményként hozza létre.
+            </p>
+            <a href="aboutMe.html" class="button">Rólam</a>
+        </div>
+    </section>
 
     <!-- Service Section-->
-    <div class="services">
-        <h1>Amit megtehetek a bőröm szépségéért </h1>
+    <section class="services">
+        <div class="services__heading">
+        
+            <h1>Amit megtehetek a bőröm szépségéért</h1>
+        </div>
         <div class="services__container">
-            <!--type .services__card and press tab to generate it-->
             <a href="faceCare.html" class="services__card--wrapper">
                 <div class="services__card services__card--face-care">
-                <h2>Arckezelések</h2>
-                <p>A természetes szépség</p>
-                <button>Fedezd fel</button>
-            </div>
+                    <h2>Arckezelések</h2>
+                    <p>A természetes szépség</p>
+                    <button>Fedezd fel</button>
+                </div>
             </a>
             <a href="faceMassage.html" class="services__card--wrapper">
                 <div class="services__card services__card--face-massage">
@@ -99,29 +109,29 @@
                     <button>Fedezd fel</button>
                 </div>
             </a>
-            <!-- class is a space-separated list of tokens. so it uses services__card and services__card--card3 configs -->
-            <div class="services__card services__card--card3">
-                <h2>Are you ready?</h2>
-                <p>Take the leap</p>
-                <button>Get Started</button>
-            </div>
-            <div class="services__card services__card--card4">
-                <h2>Are you ready?</h2>
-                <p>Take the leap</p>
-                <button>Get Started</button>
-            </div>
-            <div class="services__card services__card--card5">
-                <h2>Are you ready?</h2>
-                <p>Take the leap</p>
-                <button>Get Started</button>
-            </div>
-            <div class="services__card services__card--card6">
-                <h2>Are you ready?</h2>
-                <p>Take the leap</p>
-                <button>Get Started</button>
-            </div>
+            <a href="contact.html" class="services__card--wrapper">
+                <div class="services__card services__card--card3">
+                    <h2>Konzultáció</h2>
+                    <p>Szépség- és bőrápolási tanácsadás</p>
+                    <button>Fedezd fel</button>
+                </div>
+            </a>
+            <a href="gyik.html" class="services__card--wrapper">
+                <div class="services__card services__card--card4">
+                    <h2>GYIK</h2>
+                    <p>Gyakori kérdések és válaszok</p>
+                    <button>Tudj meg többet</button>
+                </div>
+            </a>
         </div>
-    </div> 
+    </section>
+
+    <section class="home-cta">
+        <div class="home-cta__content">
+            <p>Az első lépés egy személyre szabott, szép és megnyugtató élmény felé.</p>
+            <a href="contact.html" class="button">Foglalj időpontot</a>
+        </div>
+    </section> 
 
     <!-- Footer section -->
     <div class="footer__container">

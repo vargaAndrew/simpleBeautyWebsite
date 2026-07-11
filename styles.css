@@ -249,17 +249,23 @@ html, body {
 
 }
 
+/*Index html -- Start*/
 /*Hero Section CSS*/
 .main {
     background-color: #1a1510;
-    background-image: url('images/DORAAN_bannerPicture.jpg');
+    background-image:
+        linear-gradient(rgba(17, 12, 8, 0.38), rgba(17, 12, 8, 0.52)),
+        url('images/15_.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
 }
 
 .main::after {
@@ -268,34 +274,92 @@ html, body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 35%;
+    height: 30%;
     background: linear-gradient(to bottom, transparent, #FAF7F2);
     pointer-events: none;
+    z-index: 1;
+}
+
+.main__content {
+    position: relative;
     z-index: 2;
+    max-width: 700px;
+    text-align: center;
+    color: #FAF7F2;
+}
+
+.main__eyebrow,
+.section-tag {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: #FAF7F2;
+}
+
+.main__eyebrow {
+    display: inline-block;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid rgba(250, 247, 242, 0.9);
+}
+
+.section-tag {
+    color: #9C7E5F;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.main__content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 9vw, 7rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0.6rem 0;
+    color: #FAF7F2;
+    font-weight: 400;
+}
+
+.main__content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: #FAF7F2;
+}
+
+.main__description {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: rgba(250, 247, 242, 0.9);
+}
+
+.main__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .main__btn {
     font-size: 0.78rem;
     background: transparent;
     padding: 14px 36px;
-    border: 1px solid #fff;
+    border: 1px solid rgba(250, 247, 242, 0.9);
     border-radius: 0;
     color: #fff;
-    margin-top: 2rem;
     cursor: pointer;
     position: relative;
     transition: all 0.4s;
     outline: none;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-}
-
-/*Check this hover effect*/
-.main__btn a {
-    position: relative;
-    z-index: 2;
-    color: #fff;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main__btn:after {
@@ -308,83 +372,125 @@ html, body {
     background: rgba(255, 255, 255, 0.18);
     transition: all 0.4s;
     border-radius: 0;
-}
-
-.main__btn:hover {
-    color:#fff;
+    z-index: 0;
 }
 
 .main__btn:hover:after {
     width: 100%;
 }
 
-.main__img--container {
-    text-align: center;
+.main__btn:hover {
+    color: #fff;
 }
 
-#main__img {
-    height: 80%;
-    width: 80%; 
+.main__btn--ghost {
+    background: rgba(250, 247, 242, 0.12);
+}
+
+.home-intro {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 8%;
+    background: #FAF7F2;
+    margin-top: -3rem;
+    position: relative;
+    z-index: 3;
+}
+
+.home-intro__image img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(44, 34, 24, 0.12);
+}
+
+.home-intro__copy {
+    max-width: 520px;
+}
+
+.home-intro__copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    color: #2C2218;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.home-intro__copy p {
+    color: #5C4A3A;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+.home-cta {
+    background: #2C2218;
+    padding: 3rem 2rem;
+}
+
+.home-cta__content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-cta__content p {
+    color: #FAF7F2;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
 }
 
 /*--- Mobile responsive*/
 @media screen and (max-width: 768px) {
-
     .main {
-        background-size: cover;
-        background-position: top center;
-        height: 100vh;
+        padding-top: 7rem;
     }
-
-    /*lets target the main container*/
-    
 
     .main__content {
         text-align: center;
-        margin-bottom: 4rem;
+    }
+
+    .home-intro {
+        grid-template-columns: 1fr;
+        padding-top: 4rem;
+    }
+
+    .home-intro__image img {
+        height: 420px;
+    }
+
+    .home-cta__content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        min-height: 82vh;
     }
 
     .main__content h1 {
-        font-size: 2.5rem;
-        margin-top: 2rem;
+        font-size: 3.5rem;
     }
 
     .main__content h2 {
-        font-size: 3rem;
+        font-size: 1.85rem;
     }
 
-    .main__content p {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
- 
-}
-
-@media screen and (max-width: 480px) {/*media query*/
-
-   .main {
-        background-size: cover;
-        background-position: top center;
-        height: 70vh;
-    }
-
-   .main__content h1 {
-        font-size: 2rem;
-        margin-top: 3rem;
-    }
-
-    .main__content h2 {
-        font-size: 2rem;
-    }
-
-    .main__content p {
-        margin-top: 2rem;
-        font-size: 1.5rem;
+    .main__description {
+        font-size: 0.98rem;
     }
 
     .main__btn {
-        padding: 12px 36px;
-        margin: 2.5rem 0; /*2.5rem by 0*/
+        width: 100%;
+        padding: 12px 28px;
     }
 }
 
@@ -392,13 +498,7 @@ html, body {
 
 @media screen and (orientation: landscape) and (max-height: 500px) {
     .main {
-        height: 100vh;
-        background-position: center;
-        background-size: cover;
-    }
-
-    .main__container {
-        height: 100vh;
+        min-height: 100vh;
     }
 }
 
@@ -408,111 +508,104 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding: 5rem 2rem 4rem;
 }
 
-.services h1 {
+.services__heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services__heading h1 {
     color: #2C2218;
     background: none;
     background-image: none;
     -webkit-text-fill-color: unset;
     -moz-text-fill-color: unset;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     text-align: center;
     padding: 0 2rem;
 }
 
 .services__container {
-    display: flex; /*check it. Itt will provide a flexible layout so when you increase the screen size the cards will be
-    card should be next to each other (side by side). When you decrease it they should position themselves in a column*/
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.services__card--wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 /*pictures from https://www.pexels.com/ It is a free stock photo and video website */
 
 .services__card {
-    margin: 1rem;
+    margin: 0;
     height: 552px;
     width: 400px;
-    border-radius: 10px;
+    border-radius: 18px;
     background-size: cover;
+    background-position: center;
     position: relative;
     color: #fff;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(44, 34, 24, 0.12);
 }
 
-/*.services__card--wrapper {
-    text-decoration: none;
-    color: inherit;
-}*/
-
-.services__card--face-care {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-        ),
-        url('images/pic6.JPG');
+.services__card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 17, 17, 0.72), rgba(17, 17, 17, 0.08));
 }
 
 .services__card--face-care {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic6.JPG');   
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic6.JPG');
 }
 
 .services__card--face-massage {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic7.JPG');   
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic7.JPG');
 }
 
 .services__card--card3 {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic8.JPG');   
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic8.JPG');
 }
 
 .services__card--card4 {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic11.JPG');   
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic11.JPG');
 }
 
-.services__card--card5 {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic10.JPG');   
-}
-
-.services__card--card6 {
-     background-image: linear-gradient(
-        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
-    ),
-    url('images/pic9.JPG');   
+.services__card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .services h2 {
     position: absolute;
-    top: 350px;
+    bottom: 110px;
     left: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
 }
 
 .services p {
-    position: absolute; /*check absolute positioning*/
-    top: 400px;
+    position: absolute;
+    bottom: 80px;
     left: 30px;
+    max-width: 250px;
+    line-height: 1.5;
+    color: rgba(250, 247, 242, 0.94);
 }
 
 .services__card button {
@@ -520,10 +613,10 @@ html, body {
     padding: 10px 22px;
     border: 1px solid rgba(250, 247, 242, 0.7);
     outline: none;
-    border-radius: 0;
+    border-radius: 999px;
     background: transparent;
     position: absolute;
-    top: 440px;
+    bottom: 30px;
     left: 30px;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
@@ -534,39 +627,41 @@ html, body {
 
 /*hover over effects*/
 .services__card:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     transition: 0.4s ease;
     cursor: pointer;
 }
 
+.services__card:hover button {
+    background: rgba(250, 247, 242, 0.14);
+}
+
 @media screen and (max-width: 960px){
     .services {
-        height: auto;    /* ← was 1600px, auto grows with any number of cards */
         padding-bottom: 3rem;
     }
 
-    .services h1 {
-        font-size: 1.4rem;
+    .services__heading h1 {
+        font-size: 1.65rem;
         margin-top: 0;
     }
 }
 
-
 @media screen and (max-width: 480px) {
     .services {
-        height: auto;
+        padding: 4rem 1rem 3rem;
     }
 
-    .services h1 {
-        font-size: 1.1rem;
+    .services__heading h1 {
+        font-size: 1.35rem;
         margin-top: 0;
     }
 
     .services__card {
-        width: 300px;
+        width: min(100%, 320px);
+        height: 500px;
     }
 }
-
 /*Footer section CSS*/
 .footer__container {
     background-color: #FAF7F2;
