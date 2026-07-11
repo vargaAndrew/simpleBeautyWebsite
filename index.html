@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORAAN</title>
+    <link rel="icon" href="images/doraanlogoCreamTransparent.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><!-- Font Awesome -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar section-->
+    <!--Its a navbar container-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!--here is the logo, ideally should use image, but now its a String-->
+            <!-- write a for tag and after that # and the id name and push tab, it will automaticall generate it (a#navbar__logo)-->
+            <a href="" id="navbar__logo">
+                <img src="images/doraanlogDarkCreamTransparent.png" alt="Doraan logo"></a>
+            <!--.navbar__toggle#mobile-menu-->
+            <div class="navbar__toggle" id="mobile-menu">
+                <!--shift + alt + down arrow copy the line-->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="aboutMe.html" class="navbar__links">
+                    Rólam
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="services.html" class="navbar__links">
+                    Szolgáltatásaim
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__links">
+                    Blog
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gyik.html" class="navbar__links">
+                    GYIK
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="contact.html" class="navbar__links">
+                    Kapcsolat
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <!-- A hero section is the large, prominent area at the top of a website’s homepage. 
+    It usually includes a headline, a short description, and a call-to-action button. 
+    The hero section is designed to grab visitors’ attention and quickly communicate the main message or value of the site.
+    It often features a background image, video, or graphic.-->
+    <div class="main">
+        <div class="main__container"></div>
+            <!--<div class="main__content">
+                <h1>NEXT GENERATION</h1>
+                <h2>TECHNOLOGY</h2>
+                <p>See what makes us different.</p>
+                <button class="main__btn">
+                    <a href="">Get Started</a>
+                </button>
+            </div>
+            <div class="main__img--container">
+                <img src="images/pic1.svg" alt="pic" id="main__img"><!-- alt means alternative name of the picture. It will show if the image cannot be displayed -->
+                <!-- pictures from https://undraw.co/--> <!-- you can add your collor at the side so the pictures will be alligned to it. Our color code is #FA6771-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <!-- Service Section-->
+    <div class="services">
+        <h1>Amit megtehetek a bőröm szépségéért </h1>
+        <div class="services__container">
+            <!--type .services__card and press tab to generate it-->
+            <a href="faceCare.html" class="services__card--wrapper">
+                <div class="services__card services__card--face-care">
+                <h2>Arckezelések</h2>
+                <p>A természetes szépség</p>
+                <button>Fedezd fel</button>
+            </div>
+            </a>
+            <a href="faceMassage.html" class="services__card--wrapper">
+                <div class="services__card services__card--face-massage">
+                    <h2>Arcmasszázs</h2>
+                    <p>A feszesebb bőr titka</p>
+                    <button>Fedezd fel</button>
+                </div>
+            </a>
+            <!-- class is a space-separated list of tokens. so it uses services__card and services__card--card3 configs -->
+            <div class="services__card services__card--card3">
+                <h2>Are you ready?</h2>
+                <p>Take the leap</p>
+                <button>Get Started</button>
+            </div>
+            <div class="services__card services__card--card4">
+                <h2>Are you ready?</h2>
+                <p>Take the leap</p>
+                <button>Get Started</button>
+            </div>
+            <div class="services__card services__card--card5">
+                <h2>Are you ready?</h2>
+                <p>Take the leap</p>
+                <button>Get Started</button>
+            </div>
+            <div class="services__card services__card--card6">
+                <h2>Are you ready?</h2>
+                <p>Take the leap</p>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Footer section -->
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                <div class="footer__link--items">
+                    <h2>Rólam</h2>
+                    <a href="">Hogyan működik</a>
+                    <a href="">Vélemények</a>
+                    <a href="">Karrier</a>
+                    <a href="">Szolgáltatási feltételek</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>Kapcsolat</h2>
+                    <a href="">Kapcsolat</a>
+                    <a href="">Szponzorációk</a>
+                </div>
+            </div>
+            <div class="footer__link--wrapper">
+                <div class="footer__link--items">
+                    <h2>Videos</h2>
+                    <a href="">Submit Video</a>
+                    <a href="">Ambassadors</a>
+                    <a href="">Agency</a>
+                    <a href="">Influencer</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>Social Media</h2>
+                    <a href="">Facebook</a>
+                    <a href="">Twitter</a>
+                    <a href="">Instagram</a>
+                    <a href="">LinkedIn</a>
+                    <a href="">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo">
+    <img src="images/doraanlogDarkCreamTransparent.png" alt="Doraan logo" >
+</a>
+                </div>
+                <p class="website__rights">DORAAN© 2026 All rights reserved.</p>
+                <div class="social__icons">
+                    <a href="https://www.facebook.com/" class="social__icon--link" target="_blank"> <!-- it opens in a new tab -->
+                    <i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-youtube"></i></a>
+                    <a href="https://www.twitter.com/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

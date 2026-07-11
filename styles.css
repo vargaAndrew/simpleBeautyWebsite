@@ -1,0 +1,2087 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: rgba(250, 247, 242, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+ }
+
+ .navbar__container {
+    display: flex; /*The logo NEXT moved to the side*/
+    justify-content: space-between;/*it will see on mobile phone*/
+    height: 80px;
+    z-index: 1; /*make above of everything*/
+    width: 100%; /*itt separate the nav items and the logos to the two corner/side ot the pages*/
+    max-width: 1300px;
+    margin: 0 auto ; /*first value is the top, second is right, bottom, left if you use 0 0 0 0 definitin. If you use two parameter the the first is top and bottom, second is left/right*/
+    padding: 0 50px; /*same as above*/
+ }
+
+#navbar__logo img {
+    height: 170px;
+    width: auto;
+}
+
+ /*use # because it is a logo*/
+#navbar__logo {
+    color: #2C2218;
+    background: none;
+    -webkit-text-fill-color: unset;
+    -moz-text-fill-color: unset;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+/*It the actual icon style*/
+.fa-gem {
+    margin-right: 0.5rem;
+}
+
+.navbar__menu {
+    display: flex; /*It put the list element int a one row*/
+    align-items: center;
+    list-style: none; /*Itt will separate the list element -> nem csusznak egymasba*/
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+    color: #2C2218;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 24px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #2C2218;
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    color: #2C2218;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
+/*define hover effect*/
+.button:hover {
+    background: #2C2218;
+    color: #FAF7F2;
+    transition: all 0.4s ease;
+}
+
+.navbar__links:hover {
+    color: #9C7E5F;
+    transition: all 0.3s ease;
+}
+
+/*---- mobile responseve part ----*/
+
+/*It triggers at 960px*/
+@media screen and (max-width: 960px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(250, 247, 242, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80;
+        z-index: 1; /*make above of everything*/
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    /*This is the mobile menu bars which appear when the windows size is mobile device sized (belowe our minimum settings)*/
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute; /*CHECK IT, it put the menu items center but check it*/
+        top: -1000px; /*The animation coming from the top and because big negativ number it ensures that it will never seen. When we click it set the top back to the value where we can see it*/
+        opacity: 0; /*0 because we dont want to see it*/
+        transition: all 0.5s ease;
+        height: auto; /*viewport height*/
+        z-index: -1;
+        background: #FAF7F2;
+    }
+
+    /*JavaScript to trigger this*/
+    .navbar__menu.active {
+        background: #FAF7F2;
+        top: 100%; /*This value essentially show the entire active menu*/
+        opacity: 1; /*so we will see it*/
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 70vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+        color: #2C2218;
+        -webkit-text-fill-color: unset;
+        -moz-text-fill-color: unset;
+    }
+
+    .navbar__links {
+        color: #2C2218;
+    }
+
+    /*check why need white space befor .bar*/
+    .navbar__toggle .bar {
+        width:25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #2C2218;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    /*# means id*/
+    #mobile-menu {
+        position: absolute;
+        top: 25%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    /*nth-child(2) means its targets the second child*/
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0; /*its mean we dont want to see it at all*/
+    }
+
+    /*we want to target the top bar so its 1*/
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /*we want to target the third bar now*/
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+/*Hero Section CSS*/
+.main {
+    background-color: #1a1510;
+    background-image: url('images/DORAAN_bannerPicture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(to bottom, transparent, #FAF7F2);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.main__btn {
+    font-size: 0.78rem;
+    background: transparent;
+    padding: 14px 36px;
+    border: 1px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s;
+    outline: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/*Check this hover effect*/
+.main__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.18);
+    transition: all 0.4s;
+    border-radius: 0;
+}
+
+.main__btn:hover {
+    color:#fff;
+}
+
+.main__btn:hover:after {
+    width: 100%;
+}
+
+.main__img--container {
+    text-align: center;
+}
+
+#main__img {
+    height: 80%;
+    width: 80%; 
+}
+
+/*--- Mobile responsive*/
+@media screen and (max-width: 768px) {
+
+    .main {
+        background-size: cover;
+        background-position: top center;
+        height: 100vh;
+    }
+
+    /*lets target the main container*/
+    
+
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content h2 {
+        font-size: 3rem;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+ 
+}
+
+@media screen and (max-width: 480px) {/*media query*/
+
+   .main {
+        background-size: cover;
+        background-position: top center;
+        height: 70vh;
+    }
+
+   .main__content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .main__content h2 {
+        font-size: 2rem;
+    }
+
+    .main__content p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .main__btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0; /*2.5rem by 0*/
+    }
+}
+
+/*Landscape*/
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .main {
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main__container {
+        height: 100vh;
+    }
+}
+
+/*Service Section CSS*/
+.services {
+    background: #FAF7F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.services h1 {
+    color: #2C2218;
+    background: none;
+    background-image: none;
+    -webkit-text-fill-color: unset;
+    -moz-text-fill-color: unset;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    font-size: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.services__container {
+    display: flex; /*check it. Itt will provide a flexible layout so when you increase the screen size the cards will be
+    card should be next to each other (side by side). When you decrease it they should position themselves in a column*/
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*pictures from https://www.pexels.com/ It is a free stock photo and video website */
+
+.services__card {
+    margin: 1rem;
+    height: 552px;
+    width: 400px;
+    border-radius: 10px;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+/*.services__card--wrapper {
+    text-decoration: none;
+    color: inherit;
+}*/
+
+.services__card--face-care {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+        ),
+        url('images/pic6.JPG');
+}
+
+.services__card--face-care {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic6.JPG');   
+}
+
+.services__card--face-massage {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic7.JPG');   
+}
+
+.services__card--card3 {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic8.JPG');   
+}
+
+.services__card--card4 {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic11.JPG');   
+}
+
+.services__card--card5 {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic10.JPG');   
+}
+
+.services__card--card6 {
+     background-image: linear-gradient(
+        to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%
+    ),
+    url('images/pic9.JPG');   
+}
+
+.services h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.services p {
+    position: absolute; /*check absolute positioning*/
+    top: 400px;
+    left: 30px;
+}
+
+.services__card button {
+    color: #FAF7F2;
+    padding: 10px 22px;
+    border: 1px solid rgba(250, 247, 242, 0.7);
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/*hover over effects*/
+.services__card:hover {
+    transform: scale(1.03);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 960px){
+    .services {
+        height: auto;    /* ← was 1600px, auto grows with any number of cards */
+        padding-bottom: 3rem;
+    }
+
+    .services h1 {
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .services {
+        height: auto;
+    }
+
+    .services h1 {
+        font-size: 1.1rem;
+        margin-top: 0;
+    }
+
+    .services__card {
+        width: 300px;
+    }
+}
+
+/*Footer section CSS*/
+.footer__container {
+    background-color: #FAF7F2;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer__logo img {
+    height: 150px;      /* Adjust as needed */
+    width: auto;
+    display: block;
+    margin: 0 auto;    /* Center the image horizontally */
+}
+
+#footer__logo {
+    color: #2C2218;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+.footer__links {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__link--wrapper {
+    display: flex; /*It will put the list element int a one row*/
+}
+
+.footer__link--items {
+    display: flex;
+    flex-direction: column; /*It will organize the child elements in a column*/
+    align-items: flex-start; /*It will align the items to the start of the column (left side)*/
+    margin: 16px; /*It is 1rem*/
+    text-align: left;
+    width: 100px;
+    box-sizing: border-box; /*It ensures that padding and border are included in the total width and height of the element, 
+    preventing unexpected layout issues when adding padding or borders*/
+}
+
+.footer__link--items h2 {
+    margin-bottom: 16px; /*It is 1rem*/
+}
+
+.footer__link--items > h2 {
+    color: #2C2218;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.footer__link--items a {
+    color: #5C4A3A;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+}
+
+.footer__link--items a:hover {
+    color: #9C7E5F;
+    transition: 0.3s ease-out;
+}
+
+/*Social icons*/
+
+.social__icon--link {
+    color: #5C4A3A;
+    font-size: 20px;
+}
+
+.social__media {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.social__media--wrap {
+    display: flex;
+    justify-content: space-between; /*It will put the content at the start and end of the container, creating space between them*/
+    align-items: center;
+    width: 90%;/*It will make the content take up 90% of the container's width, leaving some space on the sides for better aesthetics and readability*/
+    max-width: 1000px;
+    margin: 40px auto 0 auto; /*40px top, auto right, 0 bottom, auto left. It centers the content horizontally and adds space above it*/
+}
+
+.social__icons {
+    display: flex; /*It will put the icons in a row*/
+    justify-content: space-between; /*It will put the icons at the start and end of the container, creating space between them*/
+    align-items: center;
+    width: 240px; /*It will set a fixed width for the container that holds the social media icons, ensuring they are spaced out evenly within that area*/
+}
+
+/*Currently it is a dead code check it*/
+.social__logo {
+    color: #fff;
+    justify-self: flex-start; /*It will align the logo to the start of the container (left side)*/
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.website__rights {
+    color: #5C4A3A;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+}
+
+/*--- Mobile responsive part ---*/
+@media screen and (max-width: 820px) {
+
+    .footer__links {
+        padding-top: 2rem; /*It will add space above the links to separate them 
+        from the logo and social media icons, improving readability on smaller screens*/
+    }
+
+    #footer__logo {
+        margin-bottom: 2rem; /*It will add space below the logo to separate it from the links, improving readability on smaller screens*/
+    }
+
+    .website__rights {
+        margin-bottom: 2rem; /*It will add space below the copyright notice to separate it from the social media icons, improving readability on smaller screens*/
+    }
+
+
+    .footer__link--wrapper {
+        flex-direction: column; /*It will organize the link sections in a column, stacking them vertically 
+        instead of side by side, which is more suitable for narrow screens*/
+    }
+
+    .social__media--wrap {
+        flex-direction: column; /*It will organize the social media section in a column, stacking the logo, copyright notice, and icons vertically 
+        instead of side by side, which is more suitable for narrow screens*/
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer__link--items {
+        margin: 0;/*It will remove the margin around each link section (we set 16px previously so this will remove)
+        to save space on smaller screens, 
+        allowing the sections to fit better within the limited width*/
+        padding: 10px; /*It will add padding inside each link section to create some space between the content 
+        and the edges of the section, improving readability on smaller screens*/
+        width: 100%; /*It will make each link section take up the full width of the container, 
+        allowing them to stack vertically and fit better on narrow screens*/
+    }
+}
+
+
+/* About Me Page */
+
+.aboutme-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.rolam__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.rolam__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.rolam__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.rolam__text {
+    flex: 1;
+}
+
+.rolam__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.rolam__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.rolam__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 2.5rem;
+}
+
+.rolam__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0 0 2.5rem;
+    color: #4D3A36;
+}
+
+.rolam__list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+}
+
+.rolam__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.rolam__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.rolam__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.rolam__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.rolam__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.rolam__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.rolam__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.rolam__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .rolam__hero {
+        height: 50vh;
+    }
+
+    .rolam__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .rolam__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .rolam__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .rolam__img {
+        height: 550px;
+    }
+
+    .rolam__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rolam__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+/* Contact Page */
+
+.contact-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.contact__section {
+    display: flex;
+    gap: 6rem;
+    padding: 7rem 8%;
+    background: rgba(250, 247, 242, 0.88);
+    align-items: flex-start;
+}
+
+.contact__info {
+    flex: 1;
+}
+
+.contact__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #2C2218;
+    margin-bottom: 0.4rem;
+}
+
+.contact__subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #2C2218;
+    opacity: 0.55;
+    margin-bottom: 3rem;
+}
+
+.contact__detail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+}
+
+.contact__label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9C7E5F;
+    margin-bottom: 0.25rem;
+}
+
+.contact__value {
+    font-size: 1rem;
+    color: #2C2218;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.contact__value:hover {
+    color: #9C7E5F;
+    transition: 0.3s ease;
+}
+
+.contact__socials {
+    display: flex;
+    gap: 1.4rem;
+    margin-top: 2.5rem;
+}
+
+.contact__social--link {
+    color: #2C2218;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.contact__social--link:hover {
+    color: #9C7E5F;
+}
+
+/* Contact Form */
+.contact__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__form--group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contact__form--label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9C7E5F;
+}
+
+.contact__form--input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #2C2218;
+    padding: 0.6rem 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #2C2218;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.contact__form--input::placeholder {
+    color: #2C2218;
+    opacity: 0.35;
+}
+
+.contact__form--input:focus {
+    border-bottom-color: #9C7E5F;
+}
+
+.contact__form--textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact__form--btn {
+    align-self: flex-start;
+    padding: 12px 36px;
+    border: 1px solid #2C2218;
+    background: transparent;
+    color: #2C2218;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact__form--btn:hover {
+    background: #2C2218;
+    color: #FAF7F2;
+}
+
+/* Contact Mobile */
+@media screen and (max-width: 768px) {
+    .contact__section {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 5rem 8% 4rem; /*5rem top, 5% left/right, 4rem bottom*/
+    }
+
+    .contact__info,
+    .contact__form {
+        width: 100%;       /* force full width in column layout */
+        flex: unset;       /* remove flex:1 which doesn't apply width in column */
+    }
+
+    .contact__form--btn {
+        width: 100%;
+        text-align: center;
+        align-self: stretch;
+    }
+}
+
+
+
+/* Blog Page */
+.blog-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.blog__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.blog__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.blog__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.blog__text {
+    flex: 1;
+}
+
+.blog__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.blog__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.blog__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 2.5rem;
+}
+
+.blog__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.blog__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.blog__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.blog__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.blog__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.blog__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.blog__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.blog__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .blog__hero {
+        height: 50vh;
+    }
+
+    .blog__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .blog__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .blog__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .blog__img {
+        height: 350px;
+    }
+
+    .blog__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blog__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* Services Page */
+.services-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.services__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.services__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.services__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.services__text {
+    flex: 1;
+}
+
+.services__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.services__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.services__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 2.5rem;
+}
+
+.services__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.services__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.services__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.services__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.services__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.services__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.services__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.services__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .services__hero {
+        height: 50vh;
+    }
+
+    .services__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .services__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .services__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .services__img {
+        height: 350px;
+    }
+
+    .services__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+/* Page Transition Animation */
+.services-page,
+.blog-page,
+.aboutme-page,
+.contact-page {
+    animation: pageReveal 0.4s ease both;
+}
+
+@keyframes pageReveal {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*facecare*/
+.facecare-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.facecare__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.facecare__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.facecare__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.facecare__text {
+    flex: 1;
+}
+
+.facecare__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.facecare__price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.facecare__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+
+.facecare__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.facecare__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0 0 2.5rem;
+    color: #4D3A36;
+}
+
+.facecare__list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+}
+
+.facecare__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.facecare__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.facecare__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.facecare__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.facecare__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.facecare__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.facecare__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.facecare__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .facecare__hero {
+        height: 50vh;
+    }
+
+    .facecare__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .facecare__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .facecare__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .facecare__img {
+        height: 350px;
+    }
+
+    .facecare__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .facecare__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+/*Face massage*/
+.face-massage-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.face-massage__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.face-massage__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.face-massage__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.face-massage__text {
+    flex: 1;
+}
+
+.face-massage__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.face-massage__price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.face-massage__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+
+.face-massage__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.face-massage__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0 0 2.5rem;
+    color: #4D3A36;
+}
+
+.face-massage__list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+}
+
+.face-massage__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.face-massage__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.face-massage__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.face-massage__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.face-massage__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.face-massage__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.face-massage__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.face-massage__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .face-massage__hero {
+        height: 50vh;
+    }
+
+    .face-massage__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .face-massage__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .face-massage__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .face-massage__img {
+        height: 350px;
+    }
+
+    .face-massage__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .face-massage__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+/*GYIK Section*/
+.gyik-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.gyik__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.gyik__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.gyik__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.gyik__text {
+    flex: 1;
+}
+
+.gyik__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.gyik__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+
+.gyik__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.gyik__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0 0 2.5rem;
+    color: #4D3A36;
+}
+
+.gyik__list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+}
+
+.gyik__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.gyik__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.gyik__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.gyik__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.gyik__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.gyik__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.gyik__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.gyik__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .gyik__hero {
+        height: 50vh;
+    }
+
+    .gyik__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .gyik__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .gyik__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .gyik__img {
+        height: 350px;
+    }
+
+    .gyik__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gyik__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+/* FAQ (GYIK) styles */
+.gyik__faq {
+    max-width: 720px;
+    margin: 1.5rem auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 0 6%;
+}
+.faq-item {
+    width: 100%;
+    background: #FAF7F2;
+    border: 1px solid #E6DDD0;
+    border-radius: 28px;
+    overflow: hidden; /* Fontos, hogy a tartalom ne lógjon ki a lekerekítésből */
+    transition: background 0.25s ease;
+}
+.faq-question {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    color: #2C2218;
+    font-size: 1rem;
+    text-align: left;
+    transition: background 0.25s ease, transform 0.08s ease;
+}
+.faq-question:focus {
+    outline: none;
+    /* A focus-gyűrűt érdemes a szülőelemre tenni, vagy box-shadow helyett outline-t használni */
+}
+
+/* 3. Nyitott állapotban most a teljes .faq-item hátterét változtatjuk meg */
+.faq-item.open {
+    background: #E8D6C2;
+}
+
+.faq-icon {
+    margin-left: 1rem;
+    transition: transform 0.25s ease;
+}
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 20px;
+    color: #4D3A36;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.faq-item.open .faq-answer {
+    padding: 12px 20px 18px;
+    max-height: 400px;
+}
+
+@media screen and (max-width: 480px) {
+    .gyik__faq { padding: 0 5%; }
+    .faq-question { padding: 14px 16px; font-size: 0.98rem; }
+}
+
+
+

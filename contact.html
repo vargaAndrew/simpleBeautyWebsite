@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORAAN - Kapcsolat</title>
+    <link rel="icon" href="images/doraanlogoCreamTransparent.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/stock10.png">
+</head>
+<body class="contact-page">
+
+    <!-- Same navbar as index.html -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">
+                <img src="images/doraanlogDarkCreamTransparent.png" alt="Doraan logo">
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="aboutMe.html" class="navbar__links">Rólam</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="services.html" class="navbar__links">Szolgáltatásaim</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__links">Blog</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gyik.html" class="navbar__links">GYIK</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="contact.html" class="navbar__links">Kapcsolat</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+
+    <!-- Contact Hero -->
+<div class="rolam__hero">
+    <p class="rolam__hero--text">Örömmel várlak — vedd fel velem a kapcsolatot</p>
+</div>
+
+<!-- Contact Section -->
+<section class="contact__section">
+    <div class="contact__info">
+        <h2 class="contact__title">Kapcsolat</h2>
+        <p class="contact__subtitle">Foglalj időpontot vagy küldj üzenetet</p>
+
+        <div class="contact__detail">
+            <span class="contact__label">Email</span>
+            <a href="mailto:hello@doraan.hu" class="contact__value">hello@doraan.hu</a>
+        </div>
+        <div class="contact__detail">
+            <span class="contact__label">Telefon</span>
+            <a href="tel:+36301234567" class="contact__value">+36 30 123 4567</a>
+        </div>
+        <div class="contact__detail">
+            <span class="contact__label">Helyszín</span>
+            <span class="contact__value">Budapest, Hungary</span>
+        </div>
+        <div class="contact__detail">
+            <span class="contact__label">Nyitvatartás</span>
+            <span class="contact__value">H–P: 9:00 – 18:00</span>
+        </div>
+
+        <div class="contact__socials">
+            <a href="https://www.instagram.com/" class="contact__social--link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" class="contact__social--link" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/" class="contact__social--link" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <form class="contact__form">
+        <div class="contact__form--group">
+            <label class="contact__form--label" for="name">Név</label>
+            <input class="contact__form--input" type="text" id="name" name="name" placeholder="Teljes neved" required>
+        </div>
+        <div class="contact__form--group">
+            <label class="contact__form--label" for="email">Email</label>
+            <input class="contact__form--input" type="email" id="email" name="email" placeholder="email@example.com" required>
+        </div>
+        <div class="contact__form--group">
+            <label class="contact__form--label" for="subject">Tárgy</label>
+            <input class="contact__form--input" type="text" id="subject" name="subject" placeholder="Időpontfoglalás / Kérdés">
+        </div>
+        <div class="contact__form--group">
+            <label class="contact__form--label" for="message">Üzenet</label>
+            <textarea class="contact__form--input contact__form--textarea" id="message" name="message" placeholder="Írj nekünk..." required></textarea>
+        </div>
+        <button type="submit" class="contact__form--btn">Üzenet küldése</button>
+    </form>
+</section>
+    <script src="app.js"></script>
+</body>
+</html>
