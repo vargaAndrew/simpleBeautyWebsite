@@ -9,6 +9,7 @@
 
 html, body {
     overflow-x: hidden;
+    scroll-behavior: smooth;/*This is for smooth scrolling on the page*/
 }
 
 .navbar {
@@ -341,6 +342,7 @@ html, body {
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .main__btn {
@@ -426,6 +428,38 @@ html, body {
     margin-bottom: 1.5rem;
 }
 
+.main_products {
+    background: #FAF7F2;
+    padding: 0 0 4rem;
+}
+
+.main_products__image-wrap {
+    width: 100%;
+    min-height: 540px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1510;
+}
+
+.main_products__image-wrap img {
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    filter: saturate(0.95) contrast(1.03);
+    background: #5C4A3A;
+}
+
+.main_products__image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(17, 12, 8, 0.12), rgba(17, 12, 8, 0.38));
+    pointer-events: none;
+}
+
 .home-cta {
     background: #2C2218;
     padding: 3rem 2rem;
@@ -463,6 +497,12 @@ html, body {
 
     .home-intro__image img {
         height: 420px;
+    }
+
+    .main_products__image-wrap,
+    .main_products__image-wrap img {
+        min-height: 420px;
+        height: auto;
     }
 
     .home-cta__content {
