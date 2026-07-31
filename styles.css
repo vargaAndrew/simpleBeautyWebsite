@@ -2231,6 +2231,11 @@ html, body {
 
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
+    .gyik__title {
+        font-size: 2.5rem;
+        white-space: nowrap;
+    }
+    
     .gyik__hero {
         height: 50vh;
     }
@@ -2262,6 +2267,12 @@ html, body {
 }
 
 @media screen and (max-width: 480px) {
+
+    .gyik__title {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+
     .gyik__hero--text {
         font-size: 1.4rem;
     }
