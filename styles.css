@@ -489,6 +489,58 @@ html, body {
     pointer-events: none;
 }
 
+.salon {
+    background: #FAF7F2;
+    padding: 3.5rem 5.5% 5rem;
+}
+
+.salon__heading {
+    max-width: 1180px;
+    margin: 0 auto 2.2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(92, 74, 58, 0.55);
+    padding-bottom: 1rem;
+}
+
+.salon__heading h2 {
+    color: #5C4A3A;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 400;
+}
+
+.salon__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.salon__item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.salon__item h3 {
+    margin-top: 1rem;
+    color: #5C4A3A;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.salon__item p {
+    margin-top: 0.35rem;
+    color: #5C4A3A;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+}
+
 .home-cta {
     background: #2C2218;
     padding: 3rem 2rem;
@@ -538,6 +590,16 @@ html, body {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .salon {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .salon__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -560,6 +622,10 @@ html, body {
     .main__btn {
         width: 100%;
         padding: 12px 28px;
+    }
+
+    .salon__grid {
+        grid-template-columns: 1fr;
     }
 }
 
