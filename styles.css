@@ -667,12 +667,13 @@ html, body {
 }
 
 .services__container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     width: 100%;
     max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .services__card--wrapper {
@@ -684,16 +685,15 @@ html, body {
 /*pictures from https://www.pexels.com/ It is a free stock photo and video website */
 
 .services__card {
-    margin: 0;
-    height: 552px;
-    width: 400px;
+    width: 100%;
+    aspect-ratio: 2 / 3; /* keeps consistent shape while allowing scaling, eg: width (height = width × 3/4).*/
     border-radius: 18px;
     background-size: cover;
     background-position: center;
     position: relative;
-    color: #fff;
     overflow: hidden;
     box-shadow: 0 18px 45px rgba(44, 34, 24, 0.12);
+    transition: transform 0.35s ease;
 }
 
 .services__card::before {
@@ -704,27 +704,27 @@ html, body {
 }
 
 .services__card--face-care {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic6.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/1_arckezelesek.png');
 }
 
 .services__card--face-massage {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic7.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/2_arcmasszazs.jpg');
 }
 
 .services__card--card3 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic8.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/3_gyantazas.jpg');
 }
 
 .services__card--card4 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic11.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/4_szemoldokfestes_formazas.jpg');
 }
 
 .services__card--card5 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic9.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/5_szempilla_lifting.jpg');
 }
 
 .services__card--card6 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/pic10.JPG');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url('images/6_smink.jpg');
 }
 
 .services__card > * {
@@ -780,46 +780,31 @@ html, body {
 }
 
 @media screen and (max-width: 960px){
-    .services {
-        padding-bottom: 3rem;
-    }
-
-    .services__heading h1 {
-        font-size: 1.65rem;
-        margin-top: 0;
-    }
+    .services__container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1100px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .services {
-        padding: 4rem 1rem 3rem;
-    }
-
-    .services__heading h1 {
-        font-size: 1.35rem;
-        margin-top: 0;
-    }
-
     .services__container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%; /* Biztosítja, hogy a konténer kitöltse a képernyőt */
-    }
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
 
-    .services__card--wrapper {
-        display: flex;             /* Block helyett Flexbox-ra váltunk */
-        justify-content: center;    /* Vízszintesen középre zárja a belső kártyát */
-        align-items: center;
-        width: 100%;
-        text-decoration: none;      /* Eltávolítja az aláhúzást a linkről */
-    }
+  .services__card {
+    aspect-ratio: 16 / 9; /* wider on small screens */
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
-    .services__card {
-        width: min(100%, 320px);
-        max-width: 100%;
-        height: 500px;
-        margin: 0 auto;  /* Biztonsági margó a tökéletes középre igazításhoz */
-    }
+  .services__card--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 /*Footer section CSS*/
 .footer__container {
