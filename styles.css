@@ -2837,6 +2837,61 @@ html, body {
     .eyebrow__hero--text {
         font-size: 1.4rem;
     }
+
+    .eyebrow__title {
+        font-size: 2.5rem;
+    }
+
+    .eyebrow__price {
+        font-size: 1.5rem;
+    }
+
+    .eyebrow__subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+        margin-top: 2rem;
+    }
+
+    .eyebrow__section {
+        padding: 3rem 1.1rem;
+    }
+
+    .eyebrow__img {
+        height: 280px;
+    }
+
+    .eyebrow__btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .eyebrow__hero--text {
+        font-size: 1.2rem;
+    }
+
+    .eyebrow__title {
+        font-size: 2.2rem;
+    }
+
+    .eyebrow__price {
+        font-size: 1.35rem;
+    }
+
+    .eyebrow__subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+    }
+
+    .eyebrow__body,
+    .eyebrow__list li {
+        font-size: 0.92rem;
+    }
+
+    .eyebrow__section {
+        padding: 2.5rem 0.9rem;
+    }
 }
 
 
