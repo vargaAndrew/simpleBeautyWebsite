@@ -734,6 +734,7 @@ html, body {
 
 .services h2 {
     position: absolute;
+    color: rgba(250, 247, 242, 0.94);
     bottom: 110px;
     left: 30px;
     font-family: 'Cormorant Garamond', serif;
