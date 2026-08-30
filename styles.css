@@ -2066,6 +2066,199 @@ html, body {
     }
 }
 
+/*Waxing Section*/
+.waxing-page {
+    /*background-color: #D1C2A3;*/
+    background-image: url('images/stock10.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.waxing__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    background: rgba(209, 194, 163, 0.85);
+}
+
+.waxing__hero--text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2C2218;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    max-width: 800px;
+}
+
+.waxing__section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8%;
+    background: rgba(250, 247, 242, 0.85);
+}
+
+.waxing__text {
+    flex: 1;
+}
+
+.waxing__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 0.5rem;
+}
+
+.waxing__price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.waxing__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4D3A36;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+
+.waxing__body {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.waxing__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0 0 2.5rem;
+    color: #4D3A36;
+}
+
+.waxing__list li {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+}
+
+.waxing__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #4D3A36;
+    color: #4D3A36;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.waxing__btn:hover {
+    background: #4D3A36;
+    color: #FAF7F2;
+}
+
+.waxing__img--wrap {
+    flex: 1;
+    max-width: 420px;
+}
+
+.waxing__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Values section */
+.waxing__values {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 8%;
+    background: rgba(209, 194, 163, 0.85);
+    text-align: center;
+}
+
+.waxing__value--item {
+    flex: 1;
+    max-width: 280px;
+    padding: 2rem;
+}
+
+.waxing__value--item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4D3A36;
+    margin-bottom: 1rem;
+}
+
+.waxing__value--item p {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4D3A36;
+    opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .waxing__hero {
+        height: 50vh;
+    }
+
+    .waxing__hero--text {
+        font-size: 1.8rem;
+    }
+
+    .waxing__section {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 2rem;
+    }
+
+    .waxing__img--wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .waxing__img {
+        height: 350px;
+    }
+
+    .waxing__values {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .waxing__hero--text {
+        font-size: 1.4rem;
+    }
+}
+
 /*GYIK Section*/
 .gyik-page {
     /*background-color: #D1C2A3;*/
