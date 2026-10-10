@@ -9,7 +9,6 @@
 
 html, body {
     overflow-x: hidden;
-    /*scroll-behavior: smooth;/*This is for smooth scrolling on the page*/
     scroll-behavior: auto;
 }
 
@@ -804,6 +803,66 @@ html, body {
     width: 100%;
   }
 }
+
+/*Customer Reviews*/
+.reviews {
+    padding: 4rem 6%;
+    background: #FAF7F2;
+}
+
+.reviews__heading {
+    max-width: 1180px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(92, 74, 58, 0.45);
+    padding-bottom: 1rem;
+}
+
+.reviews__heading .section-tag {
+    margin-bottom: 0.5rem;
+}
+
+.reviews__heading h2 {
+    color: #2C2218;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400;
+}
+
+.reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.review-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(92, 74, 58, 0.35);
+    background: #fff;
+}
+
+.review-card blockquote {
+    color: #5C4A3A;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.review-card__author {
+    margin-top: 1.25rem;
+    color: #2C2218;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .reviews__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /*Footer section CSS*/
 .footer__container {
     background-color: #FAF7F2;

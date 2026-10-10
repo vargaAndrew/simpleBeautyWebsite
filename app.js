@@ -11,10 +11,6 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active');
 });
 
-/*document.querySelectorAll('.navbar__links').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-});*/
-
 document.querySelectorAll('.navbar__links').forEach(link => {
     link.addEventListener('click', event => {
         const target = link.hash && document.querySelector(link.hash);
