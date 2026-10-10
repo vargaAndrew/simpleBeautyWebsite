@@ -69,7 +69,7 @@ if (reviewCarousel) {
     let autoplayTimer = null;
 
     function showReview(index) {
-        currentIndex = (index + slides.length) % slides.length;
+        currentIndex = (index + slides.length) % slides.length; 
 
         slides.forEach((slide, slideIndex) => {
             slide.hidden = slideIndex !== currentIndex;

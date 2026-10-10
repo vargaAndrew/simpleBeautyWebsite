@@ -891,6 +891,25 @@ html, body {
     font-size: 0.75rem;
 }
 
+@media screen and (max-width: 400px) {
+    .reviews__controls {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 0.6rem;
+    }
+
+    .reviews__status {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .reviews__controls .reviews__autoplay {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
 /*Footer section CSS*/
 .footer__container {
     background-color: #FAF7F2;
