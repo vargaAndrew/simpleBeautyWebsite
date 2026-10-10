@@ -53,3 +53,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Review carousel behavior
+const reviewCarousel = document.querySelector('#reviews-carousel');
+
+if (reviewCarousel) {
+    const slides = [...reviewCarousel.querySelectorAll('.review-card')];
+    const status = reviewCarousel.querySelector('.reviews__status');
+    const previousButton = reviewCarousel.querySelector('.reviews__previous');
+    const nextButton = reviewCarousel.querySelector('.reviews__next');
+    const autoplayButton = reviewCarousel.querySelector('.reviews__autoplay');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+
+    function showReview(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, slideIndex) => {
+            slide.hidden = slideIndex !== currentIndex;
+        });
+
+        status.textContent = `${currentIndex + 1} / ${slides.length}`;
+    }
+
+    function stopAutoplay() {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
+        autoplayButton.textContent = 'Automatikus váltás indítása';
+    }
+
+    function startAutoplay() {
+        if (prefersReducedMotion.matches || autoplayTimer) return;
+
+        autoplayTimer = window.setInterval(() => {
+            showReview(currentIndex + 1);
+        }, 6000);
+
+        autoplayButton.textContent = 'Automatikus váltás szüneteltetése';
+    }
+
+    previousButton.addEventListener('click', () => {
+        stopAutoplay();
+        showReview(currentIndex - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+        stopAutoplay();
+        showReview(currentIndex + 1);
+    });
+
+    autoplayButton.addEventListener('click', () => {
+        if (autoplayTimer) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
+    });
+
+    showReview(0);
+    startAutoplay();
+}

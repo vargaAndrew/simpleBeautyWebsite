@@ -819,6 +819,7 @@ html, body {
 }
 
 .reviews__heading .section-tag {
+    color: #9C7E5F;
     margin-bottom: 0.5rem;
 }
 
@@ -829,24 +830,27 @@ html, body {
     font-weight: 400;
 }
 
-.reviews__grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    max-width: 1180px;
+.reviews__carousel {
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .review-card {
-    padding: 1.5rem;
+    min-height: 190px;
+    padding: 2rem;
     border: 1px solid rgba(92, 74, 58, 0.35);
     background: #fff;
+    text-align: center;
+}
+
+.review-card[hidden] {
+    display: none;
 }
 
 .review-card blockquote {
     color: #5C4A3A;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     line-height: 1.5;
 }
 
@@ -857,10 +861,34 @@ html, body {
     font-size: 1.2rem;
 }
 
-@media screen and (max-width: 768px) {
-    .reviews__grid {
-        grid-template-columns: 1fr;
-    }
+.reviews__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.reviews__controls button {
+    padding: 0.45rem 0.8rem;
+    border: 1px solid #5C4A3A;
+    background: transparent;
+    color: #2C2218;
+    cursor: pointer;
+}
+
+.reviews__controls button:focus-visible {
+    outline: 2px solid #9C7E5F;
+    outline-offset: 3px;
+}
+
+.reviews__status {
+    color: #5C4A3A;
+}
+
+.reviews__controls .reviews__autoplay {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
 }
 
 /*Footer section CSS*/

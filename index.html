@@ -181,33 +181,36 @@ Ahogy arra is figyelünk, hogy mit eszünk meg, az sem mindegy, hogy mivel ápol
         </div>
     </section>
 
+    <!-- Customer Reviews Section -->
     <section class="reviews" aria-labelledby="reviews-title">
     <div class="reviews__heading">
         <p class="section-tag">Vendégeim mondták</p>
         <h2 id="reviews-title">Valódi élmények</h2>
     </div>
 
-    <div class="reviews__grid">
-        <article class="review-card">
-            <blockquote>
-                „Ide kerüljön egy rövid, valódi vendégvélemény a kezelésről.”
-            </blockquote>
+    <div class="reviews__carousel" id="reviews-carousel"
+         role="region" aria-roledescription="carousel" aria-label="Vendégvélemények">
+        <article class="review-card" aria-roledescription="slide">
+            <blockquote>„Ide kerüljön egy valódi vendégvélemény a kezelésről.”</blockquote>
             <p class="review-card__author">Vendég neve</p>
         </article>
 
-        <article class="review-card">
-            <blockquote>
-                „Ide kerüljön egy másik rövid vélemény a szalonélményről.”
-            </blockquote>
+        <article class="review-card" aria-roledescription="slide" hidden>
+            <blockquote>„Ide kerüljön egy másik valódi vélemény a szalonélményről.”</blockquote>
             <p class="review-card__author">Vendég neve</p>
         </article>
 
-        <article class="review-card">
-            <blockquote>
-                „Ide kerüljön egy harmadik vendégvélemény.”
-            </blockquote>
+        <article class="review-card" aria-roledescription="slide" hidden>
+            <blockquote>„Ide kerüljön egy harmadik valódi vendégvélemény.”</blockquote>
             <p class="review-card__author">Vendég neve</p>
         </article>
+
+        <div class="reviews__controls">
+            <button class="reviews__previous" type="button" aria-label="Előző vélemény">‹</button>
+            <span class="reviews__status" aria-live="polite">1 / 3</span>
+            <button class="reviews__next" type="button" aria-label="Következő vélemény">›</button>
+            <button class="reviews__autoplay" type="button">Automatikus váltás szüneteltetése</button>
+        </div>
     </div>
 </section>
 
