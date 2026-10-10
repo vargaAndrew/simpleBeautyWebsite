@@ -9,7 +9,8 @@
 
 html, body {
     overflow-x: hidden;
-    scroll-behavior: smooth;/*This is for smooth scrolling on the page*/
+    /*scroll-behavior: smooth;/*This is for smooth scrolling on the page*/
+    scroll-behavior: auto;
 }
 
 .navbar {
