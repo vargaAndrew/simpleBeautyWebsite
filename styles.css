@@ -1010,8 +1010,8 @@ html, body {
 .social__icons {
     display: flex; /*It will put the icons in a row*/
     justify-content: space-between; /*It will put the icons at the start and end of the container, creating space between them*/
-    align-items: center;
-    width: 240px; /*It will set a fixed width for the container that holds the social media icons, ensuring they are spaced out evenly within that area*/
+    gap: 1.5rem;
+    width: auto;
 }
 
 /*Currently it is a dead code check it*/
