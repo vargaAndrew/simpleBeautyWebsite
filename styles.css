@@ -3242,6 +3242,18 @@ backdrop-filter: blur(8px);
     opacity: 0.8;
 }
 
+
+.home-cta {
+    padding: 0;
+    background: #FAF7F2;
+}
+
+.home-cta__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .gyik__title {
