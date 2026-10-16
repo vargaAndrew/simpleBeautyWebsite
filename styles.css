@@ -2171,13 +2171,24 @@ html, body {
 }
 
 /*Waxing Section*/
+
 .waxing-page {
-    /*background-color: #D1C2A3;*/
-    background-image: url('images/leafShadow.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+    background: none;
+}
+
+.waxing-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100lvh;
+    z-index: -1;
+    background: url("images/leafShadow.jpg") center / cover no-repeat;
+    pointer-events: none;
 }
 
 .waxing__hero {
@@ -2355,6 +2366,7 @@ html, body {
         align-items: center;
         padding: 3rem 5%;
     }
+    
 }
 
 @media screen and (max-width: 480px) {
