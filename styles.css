@@ -1970,7 +1970,7 @@ html, body {
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .facecare__hero {
-        height: 65vh;
+        height: 70svh;
     }
     
     .facecare__section {
@@ -1998,6 +1998,14 @@ html, body {
 @media screen and (max-width: 480px) {
     
 
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .facecare__hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 2rem;
+    }
 }
 
 /*Face massage*/
