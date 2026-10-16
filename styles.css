@@ -1804,25 +1804,43 @@ html, body {
     pointer-events: none;
 }
 
-.facecare__hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70vh;
-    background: rgba(209, 194, 163, 0.85);
+
+
+.facecare__hero--title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.25rem, 9vw, 6.4rem);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    text-transform: none;
+    margin: 0 0 1.2rem;
+    color: #2C2218;
 }
 
 .facecare__hero--text {
+    max-width: 800px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
+    font-size: clamp(1rem, 4vw, 1.8rem);
     font-weight: 300;
     font-style: italic;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
     letter-spacing: 0.05em;
-    max-width: 800px;
+    
+}
+
+.facecare__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    height: 70vh;
+    padding: 0 1.5rem;
+    text-align: center;
+    background: rgba(209, 194, 163, 0.85);
 }
 
 .facecare__section {
@@ -1952,21 +1970,13 @@ html, body {
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .facecare__hero {
-        height: 50vh;
+        height: 65vh;
     }
-
-    .facecare__hero--text {
-        font-size: 1.8rem;
-    }
-
+    
     .facecare__section {
         flex-direction: column;
-        padding: 4rem 5%;
+        padding: 1rem 5% 4rem;
         gap: 2rem;
-    }
-
-    .facecare__subtitle {
-        margin-top: 1.5rem;
     }
 
     .facecare__img--wrap {
@@ -1987,19 +1997,7 @@ html, body {
 
 @media screen and (max-width: 480px) {
     
-    
-    .facecare__section {
-        padding: 4rem 5%;
-    }
 
-    .facecare__subtitle {
-        margin-top: 1.5rem;
-    }
-
-    
-    .facecare__hero--text {
-        font-size: 1.4rem;
-    }
 }
 
 /*Face massage*/
@@ -2029,38 +2027,6 @@ html, body {
     width: 100%;
     height: 70vh;
     background: rgba(209, 194, 163, 0.85);
-}
-
-.facecare__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    width: 100%;
-    height: 70vh;
-    padding: 0 1.5rem;
-    text-align: center;
-    background: rgba(209, 194, 163, 0.85);
-}
-
-.facecare__hero--title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.25rem, 9vw, 6.4rem);
-    font-weight: 400;
-    line-height: 0.82;
-    letter-spacing: -0.055em;
-    text-transform: none;
-    margin: 0 0 1.2rem;
-    color: #2C2218;
-}
-
-.facecare__hero--text {
-    max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    line-height: 1.5;
-    color: #2C2218;
 }
 
 .face-massage__hero--text {
