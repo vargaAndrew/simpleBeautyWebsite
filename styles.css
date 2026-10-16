@@ -1965,6 +1965,10 @@ html, body {
         gap: 2rem;
     }
 
+    .facecare__subtitle {
+        margin-top: 1.5rem;
+    }
+
     .facecare__img--wrap {
         max-width: 100%;
         width: 100%;
@@ -1985,7 +1989,7 @@ html, body {
     
     
     .facecare__section {
-        padding-top: 1.5rem;
+        padding: 4rem 5%;
     }
 
     .facecare__subtitle {
@@ -2042,15 +2046,19 @@ html, body {
 
 .facecare__hero--title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
+    font-size: clamp(3.25rem, 9vw, 6.4rem);
     font-weight: 400;
-    line-height: 1;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    text-transform: none;
+    margin: 0 0 1.2rem;
     color: #2C2218;
 }
 
 .facecare__hero--text {
     max-width: 800px;
-    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 4vw, 1.8rem);
     line-height: 1.5;
     color: #2C2218;
 }
@@ -2197,14 +2205,6 @@ html, body {
         height: 50vh;
     }
 
-    .facecare__hero--title {
-        font-size: 3rem;
-    }
-
-    .face-massage__hero--text {
-        font-size: 1.1rem;
-    }
-
     .face-massage__section {
         flex-direction: column;
         padding: 4rem 5%;
@@ -2228,13 +2228,7 @@ html, body {
 }
 
 @media screen and (max-width: 480px) {
-    .facecare__hero--title {
-        font-size: 3rem;
-    }
-
-    .facecare__hero--text {
-        font-size: 1rem;
-    }
+    
 }
 
 /*Waxing Section*/
