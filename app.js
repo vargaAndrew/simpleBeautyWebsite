@@ -23,13 +23,13 @@ document.querySelectorAll('.navbar__links').forEach(link => {
 
         const startY = window.scrollY;
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const endY = target.getBoundingClientRect().top + startY - navbarHeight;
         const duration = 2200; // milliseconds; increase this to scroll more slowly
         const startTime = performance.now();
 
         function animateScroll(currentTime) {
             const progress = Math.min((currentTime - startTime) / duration, 1);
-            const easedProgress = progress;
+            const endY = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+            const easedProgress = progress * progress * (3 - 2 * progress);
 
             window.scrollTo(0, startY + (endY - startY) * easedProgress);
 

@@ -521,10 +521,16 @@ html, body {
     margin: 0 auto;
 }
 
-.salon__item img {
-    display: block;
+.salon__image {
     width: 100%;
     aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.salon__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
