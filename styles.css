@@ -3122,6 +3122,13 @@ html, body {
     }
 }
 
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .eyebrow__hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 2rem;
+    }
+}
 
 /*GYIK Section*/
 .gyik-page {
