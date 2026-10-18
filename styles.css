@@ -2870,33 +2870,58 @@ html, body {
 
 /*Eyebrow section*/
 .eyebrow-page {
-    /*background-color: #D1C2A3;*/
-    background-image: url('images/stock10.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+    background: none;
 }
 
-.eyebrow__hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.eyebrow-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 70vh;
-    background: rgba(209, 194, 163, 0.85);
+    height: 100vh;
+    height: 100lvh;
+    z-index: -1;
+    background: url("images/leafShadow.jpg") center / cover no-repeat;
+    pointer-events: none;
+}
+
+.eyebrow__hero--title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.25rem, 9vw, 6.4rem);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    text-transform: none;
+    margin: 0 0 1.2rem;
+    color: #2C2218;
 }
 
 .eyebrow__hero--text {
+    max-width: 800px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
+    font-size: clamp(1rem, 4vw, 1.8rem);
     font-weight: 300;
     font-style: italic;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
     letter-spacing: 0.05em;
-    max-width: 800px;
+}
+
+.eyebrow__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    height: 70vh;
+    padding: 0 1.5rem;
+    text-align: center;
+    background: rgba(209, 194, 163, 0.85);
 }
 
 .eyebrow__section {
@@ -2904,19 +2929,11 @@ html, body {
     align-items: center;
     gap: 4rem;
     padding: 6rem 8%;
-    background: rgba(250, 247, 242, 0.85);
+    background: #FAF7F2;
 }
 
 .eyebrow__text {
     flex: 1;
-}
-
-.eyebrow__title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: #4D3A36;
-    margin-bottom: 0.5rem;
 }
 
 .eyebrow__price {
@@ -3026,16 +3043,12 @@ html, body {
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .eyebrow__hero {
-        height: 50vh;
-    }
-
-    .eyebrow__hero--text {
-        font-size: 1.8rem;
+        height: 70vh;
     }
 
     .eyebrow__section {
         flex-direction: column;
-        padding: 4rem 5%;
+        padding: 1rem 5% 4rem;
         gap: 2rem;
     }
 
@@ -3056,14 +3069,7 @@ html, body {
 }
 
 @media screen and (max-width: 480px) {
-    .eyebrow__hero--text {
-        font-size: 1.4rem;
-    }
-
-    .eyebrow__title {
-        font-size: 2.5rem;
-    }
-
+    
     .eyebrow__price {
         font-size: 1.5rem;
     }
