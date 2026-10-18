@@ -2239,25 +2239,40 @@ html, body {
     pointer-events: none;
 }
 
-.waxing__hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70vh;
-    background: rgba(209, 194, 163, 0.85);
+.waxing__hero--title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.25rem, 9vw, 6.4rem);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    text-transform: none;
+    margin: 0 0 1.2rem;
+    color: #2C2218;
 }
 
 .waxing__hero--text {
+    max-width: 800px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
+    font-size: clamp(1rem, 4vw, 1.8rem);
     font-weight: 300;
     font-style: italic;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
     letter-spacing: 0.05em;
-    max-width: 800px;
+}
+
+.waxing__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    height: 70vh;
+    padding: 0 1.5rem;
+    text-align: center;
+    background: rgba(209, 194, 163, 0.85);
 }
 
 .waxing__section {
@@ -2270,14 +2285,6 @@ html, body {
 
 .waxing__text {
     flex: 1;
-}
-
-.waxing__title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: #4D3A36;
-    margin-bottom: 0.5rem;
 }
 
 .waxing__price {
@@ -2387,16 +2394,12 @@ html, body {
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
     .waxing__hero {
-        height: 50vh;
-    }
-
-    .waxing__hero--text {
-        font-size: 1.8rem;
+        height: 70vh;
     }
 
     .waxing__section {
         flex-direction: column;
-        padding: 4rem 5%;
+        padding: 1rem 5% 4rem;
         gap: 2rem;
     }
 
@@ -2418,8 +2421,14 @@ html, body {
 }
 
 @media screen and (max-width: 480px) {
-    .waxing__hero--text {
-        font-size: 1.4rem;
+    
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .waxing__hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 2rem;
     }
 }
 
