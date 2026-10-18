@@ -57,6 +57,7 @@ const reviewCarousel = document.querySelector('#reviews-carousel');
 
 if (reviewCarousel) {
     const slides = [...reviewCarousel.querySelectorAll('.review-card')];
+    const reviewSlides = reviewCarousel.querySelector('.reviews__slides');
     const status = reviewCarousel.querySelector('.reviews__status');
     const previousButton = reviewCarousel.querySelector('.reviews__previous');
     const nextButton = reviewCarousel.querySelector('.reviews__next');
@@ -65,6 +66,36 @@ if (reviewCarousel) {
 
     let currentIndex = 0;
     let autoplayTimer = null;
+    let reviewResizeFrame = null;
+
+    function updateReviewSlidesHeight() {
+        if (!reviewSlides) return;
+
+        let maxHeight = 0;
+
+        slides.forEach(slide => {
+            const wasHidden = slide.hidden;
+            const originalStyle = slide.getAttribute('style');
+
+            slide.hidden = false;
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.left = '0';
+            slide.style.width = '100%';
+            slide.style.visibility = 'hidden';
+
+            maxHeight = Math.max(maxHeight, slide.getBoundingClientRect().height);
+
+            slide.hidden = wasHidden;
+            if (originalStyle === null) {
+                slide.removeAttribute('style');
+            } else {
+                slide.setAttribute('style', originalStyle);
+            }
+        });
+
+        reviewSlides.style.setProperty('--review-slides-height', `${Math.ceil(maxHeight)}px`);
+    }
 
     function showReview(index) {
         currentIndex = (index + slides.length) % slides.length; 
@@ -110,6 +141,12 @@ if (reviewCarousel) {
         }
     });
 
+    window.addEventListener('resize', () => {
+        window.cancelAnimationFrame(reviewResizeFrame);
+        reviewResizeFrame = window.requestAnimationFrame(updateReviewSlidesHeight);
+    });
+    document.fonts.ready.then(updateReviewSlidesHeight);
+    updateReviewSlidesHeight();
     showReview(0);
     startAutoplay();
 }

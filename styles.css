@@ -905,6 +905,11 @@ html, body {
     margin: 0 auto;
 }
 
+.reviews__slides {
+    position: relative;
+    min-height: var(--review-slides-height, 0px);
+}
+
 .review-card {
     min-height: 190px;
     padding: 2rem;
