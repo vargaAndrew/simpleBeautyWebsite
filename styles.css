@@ -3196,21 +3196,33 @@ html, body {
 
 /*GYIK Section*/
 .gyik-page {
-    /*background-color: #D1C2A3;*/
-    background-image: url('images/stock10.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+    background: none;
 }
 
-.gyik__hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gyik-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 70vh;
-    background: rgba(209, 194, 163, 0.85);
+    height: 100vh;
+    height: 100lvh;
+    z-index: -1;
+    background: url("images/leafShadow.jpg") center / cover no-repeat;
+    pointer-events: none;
+}
+
+.gyik__hero--title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.25rem, 9vw, 6.4rem);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    text-transform: none;
+    margin: 0 0 1.2rem;
+    color: #2C2218;
 }
 
 .gyik__hero--text {
@@ -3225,25 +3237,29 @@ html, body {
     max-width: 800px;
 }
 
+.gyik__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    height: 70vh;
+    padding: 0 1.5rem;
+    text-align: center;
+    background: rgba(209, 194, 163, 0.85);
+}
+
 .gyik__section {
     display: flex;
     align-items: center;
     gap: 4rem;
     padding: 6rem 8%;
-    background: rgba(250, 247, 242, 0.85);
+    background: #FAF7F2;
 }
 
 .gyik__text {
     flex: 1;
-}
-
-.gyik__title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: #4D3A36;
-    margin-bottom: 2rem;
-    text-align: center;
 }
 
 .gyik__subtitle {
@@ -3356,22 +3372,13 @@ html, body {
 
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
-    .gyik__title {
-        font-size: 2.5rem;
-        white-space: nowrap;
-    }
-    
     .gyik__hero {
-        height: 50vh;
-    }
-
-    .gyik__hero--text {
-        font-size: 1.8rem;
+        height: 70vh;
     }
 
     .gyik__section {
         flex-direction: column;
-        padding: 4rem 5%;
+        padding: 1rem 5% 4rem;
         gap: 2rem;
     }
 
@@ -3393,17 +3400,15 @@ html, body {
 
 @media screen and (max-width: 480px) {
 
-    .gyik__title {
-        font-size: 2rem;
-        white-space: nowrap;
-    }
-
-    .gyik__hero--text {
-        font-size: 1.4rem;
-    }
 }
 
-
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .gyik__hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 2rem;
+    }
+}
 
 /* FAQ (GYIK) styles */
 .gyik__faq {
