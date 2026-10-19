@@ -61,12 +61,13 @@ if (reviewCarousel) {
     const status = reviewCarousel.querySelector('.reviews__status');
     const previousButton = reviewCarousel.querySelector('.reviews__previous');
     const nextButton = reviewCarousel.querySelector('.reviews__next');
-    const autoplayButton = reviewCarousel.querySelector('.reviews__autoplay');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     let currentIndex = 0;
     let autoplayTimer = null;
     let reviewResizeFrame = null;
+    const autoplayInterval = 6000;
+    const manualChangeDelay = 10000;
 
     function updateReviewSlidesHeight() {
         if (!reviewSlides) return;
@@ -107,38 +108,27 @@ if (reviewCarousel) {
         status.textContent = `${currentIndex + 1} / ${slides.length}`;
     }
 
-    function stopAutoplay() {
-        window.clearInterval(autoplayTimer);
-        autoplayTimer = null;
-        autoplayButton.textContent = 'Automatikus váltás indítása';
-    }
+    function scheduleAutoplay(delay = autoplayInterval) {
+        window.clearTimeout(autoplayTimer);
+        if (prefersReducedMotion.matches) {
+            autoplayTimer = null;
+            return;
+        }
 
-    function startAutoplay() {
-        if (prefersReducedMotion.matches || autoplayTimer) return;
-
-        autoplayTimer = window.setInterval(() => {
+        autoplayTimer = window.setTimeout(() => {
             showReview(currentIndex + 1);
-        }, 6000);
-
-        autoplayButton.textContent = 'Automatikus váltás szüneteltetése';
+            scheduleAutoplay();
+        }, delay);
     }
 
     previousButton.addEventListener('click', () => {
-        stopAutoplay();
         showReview(currentIndex - 1);
+        scheduleAutoplay(manualChangeDelay);
     });
 
     nextButton.addEventListener('click', () => {
-        stopAutoplay();
         showReview(currentIndex + 1);
-    });
-
-    autoplayButton.addEventListener('click', () => {
-        if (autoplayTimer) {
-            stopAutoplay();
-        } else {
-            startAutoplay();
-        }
+        scheduleAutoplay(manualChangeDelay);
     });
 
     window.addEventListener('resize', () => {
@@ -148,5 +138,5 @@ if (reviewCarousel) {
     document.fonts.ready.then(updateReviewSlidesHeight);
     updateReviewSlidesHeight();
     showReview(0);
-    startAutoplay();
+    scheduleAutoplay();
 }

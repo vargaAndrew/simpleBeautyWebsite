@@ -961,11 +961,6 @@ html, body {
     color: #5C4A3A;
 }
 
-.reviews__controls .reviews__autoplay {
-    margin-left: 0.5rem;
-    font-size: 0.75rem;
-}
-
 @media screen and (max-width: 400px) {
     .reviews__controls {
         display: grid;
@@ -976,12 +971,6 @@ html, body {
     .reviews__status {
         text-align: center;
         white-space: nowrap;
-    }
-
-    .reviews__controls .reviews__autoplay {
-        grid-column: 1 / -1;
-        width: 100%;
-        margin-left: 0;
     }
 }
 
