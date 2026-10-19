@@ -659,11 +659,10 @@ html, body {
     background-image: none;
     -webkit-text-fill-color: unset;
     -moz-text-fill-color: unset;
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+    font-family: 'Bodoni 72', Didot, serif;
+    font-weight: 400;
     letter-spacing: 0.14em;
-    text-transform: uppercase;
     text-align: center;
     padding: 0 2rem;
 }
