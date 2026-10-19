@@ -511,6 +511,7 @@ html, body {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 3vw, 2.8rem);
     font-weight: 400;
+    letter-spacing: 0.04em;
 }
 
 .salon__grid {
@@ -667,9 +668,9 @@ html, body {
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.04em;
     text-align: center;
-    padding: 0 2rem;
+    padding: 0;
 }
 
 .services__container {
