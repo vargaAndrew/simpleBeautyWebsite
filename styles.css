@@ -3438,11 +3438,21 @@ html, body {
     font-size: clamp(0.75rem, 2.3vw, 1.6rem);
 }
 
-.home-cta__detail p {
+.home-cta__detail p,
+.home-cta__detail a {
     margin: 0;
     color: #FAF7F2;
     font-size: clamp(0.56rem, 1.9vw, 1.25rem);
     overflow-wrap: anywhere;
+}
+
+.home-cta__detail a {
+    text-decoration: none;
+}
+
+.home-cta__detail a:hover,
+.home-cta__detail a:focus-visible {
+    text-decoration: underline;
 }
 
 /* Mobile responsive */
