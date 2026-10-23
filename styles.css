@@ -2350,12 +2350,15 @@ html, body {
     flex: 1;
 }
 
+.waxing__text > div {
+    padding: 0.75rem 0;
+}
+
 .waxing__price {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     font-weight: 300;
     color: #4D3A36;
-    margin-bottom: 1rem;
 }
 
 .waxing__subtitle {
@@ -2365,8 +2368,8 @@ html, body {
     text-transform: uppercase;
     color: #4D3A36;
     opacity: 0.6;
-    margin-bottom: 1rem;
-    margin-top: 4rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0;
     font-weight: 600;
 }
 
@@ -2462,7 +2465,7 @@ html, body {
 
     .waxing__section {
         flex-direction: column;
-        padding: 1rem 5% 4rem;
+        padding: 2rem 5% 4rem;
         gap: 2rem;
     }
 
