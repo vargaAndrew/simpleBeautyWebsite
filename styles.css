@@ -2093,11 +2093,11 @@ html, body {
 }
 
 .face-massage__hero--text {
-     max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    max-width: 800px;
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.7rem, 3.3vw, 1.4rem);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
@@ -2307,10 +2307,10 @@ html, body {
 
 .waxing__hero--text {
     max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.7rem, 3.3vw, 1.4rem);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
@@ -2520,10 +2520,10 @@ html, body {
 
 .eyelash__hero--text {
     max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.7rem, 3.3vw, 1.4rem);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
@@ -2736,10 +2736,10 @@ html, body {
 
 .makeup__hero--text {
     max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.7rem, 3.3vw, 1.4rem);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
@@ -2956,10 +2956,10 @@ html, body {
 
 .eyebrow__hero--text {
     max-width: 800px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.7rem, 3.3vw, 1.4rem);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: #2C2218;
     text-align: center;
     line-height: 1.5;
@@ -3150,10 +3150,6 @@ html, body {
 }
 
 @media screen and (max-width: 360px) {
-    .eyebrow__hero--text {
-        font-size: 1.2rem;
-    }
-
     .eyebrow__title {
         font-size: 2.2rem;
     }
