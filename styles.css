@@ -3003,6 +3003,10 @@ html, body {
     flex: 1;
 }
 
+.eyebrow__text > div {
+    padding: 1rem 0;
+}
+
 .eyebrow__price {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
@@ -3018,8 +3022,8 @@ html, body {
     text-transform: uppercase;
     color: #4D3A36;
     opacity: 0.6;
-    margin-bottom: 1rem;
-    margin-top: 4rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0rem;
     font-weight: 600;
 }
 
@@ -3115,7 +3119,7 @@ html, body {
 
     .eyebrow__section {
         flex-direction: column;
-        padding: 1rem 5% 4rem;
+        padding: 3rem 5% 4rem;
         gap: 2rem;
     }
 
@@ -3137,6 +3141,10 @@ html, body {
 
 @media screen and (max-width: 480px) {
     
+    .eyebrow__text > div {
+        padding: 0.5rem 0;
+    }
+    
     .eyebrow__price {
         font-size: 1.5rem;
     }
@@ -3144,11 +3152,11 @@ html, body {
     .eyebrow__subtitle {
         font-size: 0.9rem;
         letter-spacing: 0.12em;
-        margin-top: 2rem;
+        margin-top: 0rem;
     }
 
     .eyebrow__section {
-        padding: 3rem 1.1rem;
+        padding: 1.5rem 1.1rem;
     }
 
     .eyebrow__img {
@@ -3181,7 +3189,7 @@ html, body {
     }
 
     .eyebrow__section {
-        padding: 2.5rem 0.9rem;
+        padding: 1rem 0.9rem;
     }
 }
 
