@@ -2585,6 +2585,7 @@ html, body {
     font-size: 2rem;
     font-weight: 300;
     color: #4D3A36;
+    margin-bottom: 0.5rem;
 }
 
 .eyelash__subtitle {
@@ -2808,6 +2809,7 @@ html, body {
     font-size: 2rem;
     font-weight: 300;
     color: #4D3A36;
+    margin-bottom: 0.5rem;
 }
 
 .makeup__subtitle {
@@ -3023,7 +3025,7 @@ html, body {
     font-size: 2rem;
     font-weight: 300;
     color: #4D3A36;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .eyebrow__subtitle {
