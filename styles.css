@@ -172,8 +172,12 @@ html, body {
         opacity: 1; /*so we will see it*/
         transition: all 0.5s ease;
         z-index: 99;
-        height: 70vh;
         font-size: 1.6rem;
+        height: 70vh;
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
     }
 
     #navbar__logo {
@@ -248,6 +252,16 @@ html, body {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+}
+
+@media screen and (max-width: 960px) and (orientation: landscape) {
+    .navbar__menu.active {
+        height: auto;
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
 }
 
 /*Index html -- Start*/
